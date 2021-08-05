@@ -25,7 +25,7 @@
 	<!-- 상단 메뉴바 -->
 <c:import url="./view/topmenu.jsp"/>
 	<!-- 내용시작 -->
-	<h3>${loginemail} 님의 메세지 메인화면 입니다</h3>
+	<h3>${loginemail} 님의 메세지 받은 메세지화면 입니다</h3>
 		<input type="button" onclick="location.href='msgWrite.jsp'" value="메세지 쓰기" />
 		<button onclick="location.href='./msgMyMsg'">내가 보낸 메세지</button>
 		<button onclick="del()">메세지 삭제</button>

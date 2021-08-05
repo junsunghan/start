@@ -40,6 +40,7 @@ table, th, td {
 		</thead>
 		<tbody id="listbody"></tbody>
 	</table>
+		<a href="index1.jsp">관리자창</a>
 </body>
 <script>
 	listCall();

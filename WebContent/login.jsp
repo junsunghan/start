@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -71,18 +72,25 @@ body, head {
                 </td>
             </tr>
         </table>
-	</form>
+        	</form>
+        	<c:if test="${success == false}">
+            <div id="redalert"
+               class=" alert alert-danger d-flex align-items-center"
+               role="alert">
+               <div>없는 이메일이거나 비밀번호가 틀립니다</div>
+            </div>
+         </c:if>
+         <c:if test="${cancel eq 'ok'}">
+            <div id="redalert"
+               class=" alert alert-danger d-flex align-items-center"
+               role="alert">
+               <div>탈퇴한 계정입니다.</div>
+            </div>
+         </c:if>
 	<span class="text-center">
         <a>아이디 찾기</a><span> | </span> <a>비밀번호 초기화</a><span> | </span><a href="./joinForm.jsp" >회원가입</a>
 	</span>
 </div>
 </div>
 </body>
-<script>
-var msg = "${msg}";
-if(msg!=""){
-	alert(msg);
-}
-
-</script>
 </html>

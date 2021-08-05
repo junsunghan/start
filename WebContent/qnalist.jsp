@@ -7,13 +7,25 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="css/common.css" type="text/css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<style type="text/css">
+body, head {
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+</style>
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
 <c:import url="./view/topmenu.jsp"/>
 	<!-- 내용시작 -->
 <ul class="noticecenter">
- 
         <li>
           <a href="./qnalist">문의사항</a>
         </li>

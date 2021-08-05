@@ -26,11 +26,11 @@ body, head {
 	<!-- 내용시작 -->
 	<div class="row m-2">
 	<div class="list-group col-md-2 m-2">
-  <a href="memberInfo" class="list-group-item list-group-item-action" >개인정보</a>
-  <a href="#" class="list-group-item list-group-item-action">친구목록</a>
-  <a href="#" class="list-group-item list-group-item-action">차단목록</a>
-  <a href="#" class="list-group-item list-group-item-action">내가 쓴글</a>
-  <a href="#" class="list-group-item list-group-item-action" >회원탈퇴</a>
+  <a href="memberInfo" class="list-group-item list-group-item-action list-group-item-light" >개인정보</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">친구목록</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">차단목록</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">내가 쓴글</a>
+  <a href="./cancel.jsp" class="list-group-item list-group-item-action list-group-item-light" >회원탈퇴</a>
 </div>
 <div class="col-6 center-block" style="margin:100 auto;">
 <h2>회원 탈퇴</h2>

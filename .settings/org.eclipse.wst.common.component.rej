@@ -1,0 +1,7 @@
+diff a/.settings/org.eclipse.wst.common.component b/.settings/org.eclipse.wst.common.component	(rejected hunks)
+@@ -1,5 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+-    <wb-module deploy-name="Footprint">
+     <wb-module deploy-name="dddd">
+         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>

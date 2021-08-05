@@ -41,8 +41,8 @@ table, th, td {
 	</table>
 	<!-- 페이지를 몇부터 몇까지 보여줄건지 (이전/다음)  -->
 	<div class="pageArea">
-	
 	</div>
+	<a href="index1.jsp">관리자창</a>
 </body>
 <script>
 var page = 1;
@@ -118,8 +118,8 @@ console.log($('.btn'));
 				}
 				content += "</span>";
 			};
-			$("div").empty();
-			$("div").append(content);
+			$("div.pageArea").empty();
+			$("div.pageArea").append(content);
 	}
  function searchList(list) {
 		console.log(list);

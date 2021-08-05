@@ -33,19 +33,19 @@ body, head {
           <a class="nav-link active" aria-current="page" href="./main.jsp">홈</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">지도</a>
+          <a class="nav-link" href="./main.jsp">지도</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">피드</a>
+          <a class="nav-link" href="./main.jsp">피드</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">발자국</a>
+          <a class="nav-link" href="./main.jsp">발자국</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">메시지</a>
+          <a class="nav-link" href="./main.jsp">메시지</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link" href="login.jsp" id="login" >
+          <a class="nav-link" href="./main.jsp" id="login" >
             프로필
           </a>
           </ul>
@@ -63,7 +63,7 @@ body, head {
 				내용 들어감
 			</div>
 			<div class="col-6">
-				<h2>플래너시작</h2>
+				  <a class="nav-link" href="./main.jsp"><h2>플래너시작</h2></a>
 				<hr />
 				내용 들어감
 			</div>

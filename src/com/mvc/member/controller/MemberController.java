@@ -13,10 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.mvc.board.service.BoardService;
 import com.mvc.member.dto.MemberDTO;
 import com.mvc.member.service.MemberService;
 
-@WebServlet({"/","/login", "/join","/logout","/overlay", "/memberInfo","/memberUpdate","/memberUpdateForm","/uploadphoto","/cancel","/chk"})
+@WebServlet({"/","/main","/login", "/join","/logout","/overlay", "/memberInfo","/memberUpdate","/memberUpdateForm","/uploadphoto","/cancel","/chk"})
 public class MemberController extends HttpServlet {
 
 	@Override
@@ -38,16 +39,15 @@ public class MemberController extends HttpServlet {
 		RequestDispatcher dis;
 		
 		switch (addr) {
-		/*
-		 * case "/": System.out.println("홈");
-		 * if(req.getSession().getAttribute("loginemail")!=null) {
-		 * System.out.println("로그인 상태 메인페이지로 이동"); dis =
-		 * req.getRequestDispatcher("main.jsp"); dis.forward(req, resp); }else {
-		 * System.out.println("비회원 인덱스로 이동"); dis =
-		 * req.getRequestDispatcher("index.jsp"); dis.forward(req, resp);
-		 * 
-		 * } break;
-		 */
+		
+		  case "/main": 
+		 System.out.println("홈");
+		 BoardService bservice = new BoardService(req);
+		 req.setAttribute("feedlist", bservice.feedlist());
+		  dis = req.getRequestDispatcher("main.jsp");
+		  dis.forward(req, resp);
+		 break;
+		 
 		
 		case "/join":
 			
@@ -74,34 +74,42 @@ public class MemberController extends HttpServlet {
 			System.out.println("로그인 요청");
 			email = req.getParameter("email");
 			pw = req.getParameter("pw");
-			success = false;
 		    MemberDTO dto = service.login(email, pw);
-		    System.out.println("dto 값은? "+dto);
-		    if(dto.getCancelMember() != -1) {
-			//System.out.println("탈퇴 여부"+dto.getCancelMember());
-		    if(dto.getCancelMember() == 1) {
+		  
+		    if(dto!=null) {
+		    	success=false;
+		    	String cancel = "";
+		    //System.out.println("dto 값은? "+dto);
+		    if(dto.getCancelMember() == '1') {
+		    	System.out.println("탈퇴한 회원"+dto.getCancelMember());
+		    	//System.out.println("실행");
+		    	cancel = "ok";
+		    	req.setAttribute("cancel", cancel);
+		    	dis = req.getRequestDispatcher("login.jsp");
 				  req.getSession().removeAttribute("loginemail");
 				  req.getSession().removeAttribute("nickname");
-				System.out.println("탈퇴한 회원");
-				req.setAttribute("success", success);
-				dis = req.getRequestDispatcher("main.jsp");
 				dis.forward(req, resp);
-			}
+				break;
+			}else {
 		    success = true;
 		    req.getSession().setAttribute("loginemail", email);
 		    req.getSession().setAttribute("nickname", dto.getNickname());
-		    req.getSession().setAttribute("suc", success);
+		   // req.getSession().setAttribute("suc", success);
 		    req.getSession().setAttribute("admin", dto.getAdminState());
-		    System.out.println("관리자면 1! :" + Character.getNumericValue(dto.getAdminState()));
+		   // System.out.println("관리자면 1! :" + dto.getAdminState());
 			System.out.println("로그인 성공?"+dto.getEmail());
 			req.setAttribute("dto", dto);
 			req.setAttribute("success", success);
-			dis = req.getRequestDispatcher("main.jsp");
+			//dis = req.getRequestDispatcher("main.jsp");
+			dis = req.getRequestDispatcher("main"); //메인화면 완성시 주석 풀고 103행 지우기
 			dis.forward(req, resp);
+			}
 		    }else {
+		    	 success = false;
 		    	req.setAttribute("success", success);
-		    	req.getSession().setAttribute("suc", success);
-				dis = req.getRequestDispatcher("main.jsp");
+		    	System.out.println(success);
+		    	//req.getSession().setAttribute("suc", success);
+				dis = req.getRequestDispatcher("login.jsp");
 				dis.forward(req, resp);
 		    }
 			break;

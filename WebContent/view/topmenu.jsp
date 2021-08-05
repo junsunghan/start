@@ -15,16 +15,16 @@ body, head {
 }
 </style>
 	<!-- 상단 메뉴바 -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./main.jsp">발자국</a>
+    <a class="navbar-brand" href="main">발자국</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse nav justify-content-end bg-light" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./main.jsp">홈</a>
+          <a class="nav-link active" aria-current="page" href="main">홈</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">지도</a>
@@ -45,7 +45,7 @@ body, head {
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="memberInfo">개인정보</a></li>
             <c:if test="${sessionScope.admin eq '1'.charAt(0)}">
-            <li><a class="dropdown-item" href="/FootPrint/index1.jsp">관리자</a></li>
+            <li><a class="dropdown-item" href="/Footprint/index1.jsp">관리자</a></li>
             </c:if>
              <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="logout">로그아웃</a></li>

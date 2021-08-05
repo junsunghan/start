@@ -51,6 +51,7 @@ div.pageArea{
 	<div class="pageArea">
 	
 	</div>
+		<a href="index1.jsp">관리자창</a>
 </body>
 <script>
 	var page = 1;
@@ -112,8 +113,8 @@ div.pageArea{
 					break;
 				}
 			};
-			$("div").empty();
-			$("div").append(content);
+			$("div.pageArea").empty();
+			$("div.pageArea").append(content);
 	}
 	
 	//다음 페이징 처리함수
@@ -138,8 +139,8 @@ div.pageArea{
 					break;
 				}
 			};
-			$("div").empty();
-			$("div").append(content);
+			$("div.pageArea").empty();
+			$("div.pageArea").append(content);
 	}
 	
 	//이전 페이징 처리함수

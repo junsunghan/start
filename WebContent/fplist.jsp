@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 <style>
 .controller {
 	padding: 25px 0;
@@ -56,8 +61,7 @@ a:hover {
 <!-- 상단 메뉴바 -->
 <c:import url="./view/topmenu.jsp"/>
 	<!-- 내용시작 -->
-	<form class="d-inline-flex justify-content-end" style="height: 21px;" action="fpsearch" method="post">
-		
+	<form class="d-inline-flex justify-content-end"  action="fpsearch" method="post">
    <table>
       <tr>
        <th>발자국 번호</th>
@@ -81,7 +85,7 @@ a:hover {
    </tr>
    </c:forEach>
    </table>
-   <div>
+   <div class="form-group">
    <button onclick="location.href='fpwrite.jsp'">발자국 글 쓰기</button>
    <input class="form-control me-1" type="search" placeholder="검색어를 입력해주세요" aria-label="Search" name="hashtag"/>
 			<button class="btn btn-outline-secondary" type="submit">search</button>

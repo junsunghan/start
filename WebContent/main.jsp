@@ -32,122 +32,37 @@ body, head {
 				내용 들어감
 			</div>
 		</div>
-		<!-- <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+		 <c:if test="${feedlist eq null || feedlist eq ''}">
+     <h1>해당 데이터가 존재하지 않습니다.</h1>
+   	 </c:if>	
+   	 
+   	 <c:forEach items="${feedlist}" var="footprint" varStatus = "no">
+   <%-- <tr>
+      <td>${footprint.boardNO}</td>
+      <td>${fn:length(feedlist) - no.index}</td>
+      <td>${footprint.markerNO}</td>
+      <td>${footprint.email}</td>
+      <td>${footprint.reg_date}</td>
+      <td><a href="fpdetail?footPrintNO=${footprint.footPrintNO}">${footprint.footprintText}</a></td>
+   </tr> --%>
 			<div class="col">
 				<div class="card">
-					<img src="/Prac/image/brand_03.png" class="card-img-top" alt="...">
+					<h4>${footprint.boardNO}</h4>
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
+						<h5 class="card-title">작성자 : ${footprint.email} </h5>
+						<p class="card-text">내용이 보고싶나?</p>
 					</div>
 					<div class="card-footer text-center">
-						<button class="btn btn-primary">자세히 보기</button>
+						<button class="btn btn-primary" onclick="location.href='fpdetail?footPrintNO=${footprint.footPrintNO}'">자세히 보기</button>
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_03.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div> -->
-			<!-- </div>
-			<div class="col">
-				<div class="card">
-					<img src="/Prac/image/brand_04.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a longer card with supporting
-							text below as a natural lead-in to additional content. This
-							content is a little bit longer.</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</div>
-				</div>
-			</div> -->
-			<div class="row">
-			
+   </c:forEach>
 		</div>
 	</div>
-
+<!-- 하단단 메뉴바 -->
+<c:import url="./view/bottom.jsp"/>
 </body>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
